@@ -102,11 +102,14 @@ router.post('/login', [
     });
   }
 
+  console.log(dealer);
+  console.log(dealer.status)
+
   // Check if dealer is active
-  if (!dealer.isActive) {
+  if (!dealer.status == 'active'  ) {
     return res.status(401).json({
       error: 'Authentication failed',
-      message: 'Account is inactive'
+      message: 'Account is inactive.'
     });
   }
 

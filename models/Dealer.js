@@ -19,6 +19,11 @@ const dealerSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  password: {
+    type: String,
+    required: true,
+    trim: true
+  },
   address: {
     street: String,
     city: String,

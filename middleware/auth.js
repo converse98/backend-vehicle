@@ -29,6 +29,7 @@ const auth = async (req, res, next) => {
 };
 
 const verifyDealer = (req, res, next) => {
+  console.log(req.params);
   const dealerId = req.params.id;
   
   if (req.dealerId && req.dealerId.toString() !== dealerId) {
@@ -36,6 +37,8 @@ const verifyDealer = (req, res, next) => {
       error: 'Access denied. You can only access your own resources.' 
     });
   }
+
+  console.log(dealerId);
   
   next();
 };

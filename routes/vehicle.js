@@ -68,9 +68,10 @@ router.get('/:id', cache(1800), async (req, res) => {
 // POST /api/dealer/:dealerId/vehicles - Crear un nuevo vehículo
 router.post('/', auth, verifyDealer, validateVehicle, async (req, res) => {
   try {
+    console.log(req.params)
     const vehicleData = {
       ...req.body,
-      dealer: req.params.dealerId
+      dealer: req.params.dealer
     };
     
     const vehicle = new Vehicle(vehicleData);
